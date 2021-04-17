@@ -11,6 +11,7 @@
         <img src="<?php echo $page->coverImage(); ?>" class="w-100 rounded" alt="<?php echo $page->title(); ?>"><br><small><span class="text-black-50"><?php echo $page->custom('figure'); ?></span></small>
         <?php endif ?>
         <p><?php echo $page->content(); ?></p>
+        <?php Theme::plugins('pageEnd'); ?>
         <br>
         <?php if (!empty($page->tags(true))): ?>
         <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
@@ -49,4 +50,3 @@
   </div><!-- /.row -->
 
 </main><!-- /.container -->
-<?php Theme::plugins('pageEnd'); ?>
