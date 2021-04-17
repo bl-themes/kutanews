@@ -28,3 +28,6 @@ Instalation
 <li>Activate 'kutanews'.</li>
   <li>Start using it.</li>
 </ul>
+
+# <h3>Bug fix</h3>
+moved "pageEnd" below ($ page-> content ()) on <i>page.php</i>. This allows Plugins that use this hook to take their proper place in the contents of the container.
