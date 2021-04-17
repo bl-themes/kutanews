@@ -4,14 +4,13 @@
   <div class="row">
     <div class="col-md-8 blog-main">
 
-      <div class="blog-post">
+        <div class="blog-post">
         <h2 class="blog-post-title"><?php echo $page->title(); ?></h2>
-        <p class="blog-post-meta"><i class="fas fa-clock text-warning"></i> <?php echo $page->date(); ?> <i class="fas fa-folder text-warning"></i> <?php echo $page->category() ?></p>
+        <p class="blog-post-meta"><span class="badge rounded-pill text-white <?php echo $page->category() ?>" style="font-size:9px;"><?php echo $page->category() ?></span> &nbsp; <i class="fas fa-clock text-warning"></i> <?php echo $page->date(); ?></p>
         <?php if ($page->coverImage()): ?>
         <img src="<?php echo $page->coverImage(); ?>" class="w-100 rounded" alt="<?php echo $page->title(); ?>"><br><small><span class="text-black-50"><?php echo $page->custom('figure'); ?></span></small>
         <?php endif ?>
         <p><?php echo $page->content(); ?></p>
-        <?php Theme::plugins('pageEnd'); ?>
         <br>
         <?php if (!empty($page->tags(true))): ?>
         <nav style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb">
@@ -35,10 +34,12 @@
             </a>
           </div>
           <div class="media-body" style="padding-left: 10px;padding-top: 3px;">
-            <p><strong><?php echo $page->user('nickname'); ?></strong><br><small>Administrator</small></p>
+            <p><strong><?php echo $page->user('nickname'); ?></strong><br><small><?php echo $page->user('firstname'); ?></small></p>
           </div>
         </div>
         <!--/ author -->
+        
+        <?php Theme::plugins('pageEnd'); ?>
       </div><!-- /.blog-post -->
 
     </div><!-- /.blog-main -->
@@ -50,3 +51,4 @@
   </div><!-- /.row -->
 
 </main><!-- /.container -->
+
